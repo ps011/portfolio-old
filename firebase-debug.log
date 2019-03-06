@@ -1,0 +1,274 @@
+[debug] [2019-03-06T17:12:36.904Z] ----------------------------------------------------------------------
+[debug] [2019-03-06T17:12:36.907Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-03-06T17:12:36.908Z] CLI Version:   6.4.0
+[debug] [2019-03-06T17:12:36.908Z] Platform:      darwin
+[debug] [2019-03-06T17:12:36.908Z] Node Version:  v8.4.0
+[debug] [2019-03-06T17:12:36.910Z] Time:          Wed Mar 06 2019 22:42:36 GMT+0530 (IST)
+[debug] [2019-03-06T17:12:36.910Z] ----------------------------------------------------------------------
+[debug] 
+[warn] ⚠  Deprecation Warning: Firebase Hosting configuration should be moved under "hosting" key.
+[debug] [2019-03-06T17:12:36.940Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-06T17:12:36.940Z] > authorizing via signed-in user
+[debug] [2019-03-06T17:12:36.940Z] [iam] checking project portfolio-88f76 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-03-06T17:12:36.943Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-88f76:testIamPermissions  
+
+[debug] [2019-03-06T17:12:38.946Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:12:38.948Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/portfolio-88f76  
+ 
+[debug] [2019-03-06T17:12:39.861Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'portfolio-88f76'...
+[info] 
+[info] i  deploying functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script.
+[debug] [2019-03-06T17:12:51.957Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "~7.0.0",
+    "firebase-functions": "^2.2.0",
+    "nodemailer": "^5.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-03-06T17:12:51.959Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/portfolio-88f76?view=CONSUMER_VIEW  
+ 
+[debug] [2019-03-06T17:12:51.960Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/portfolio-88f76?view=CONSUMER_VIEW  
+ 
+[debug] [2019-03-06T17:12:54.715Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:12:54.911Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2019-03-06T17:12:54.913Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-88f76  
+ 
+[debug] [2019-03-06T17:12:56.760Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:12:56.761Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/855730171048:getServerAppConfig  
+ 
+[debug] [2019-03-06T17:12:57.562Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:12:57.565Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions  
+
+[debug] [2019-03-06T17:12:59.403Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-03-06T17:12:59.407Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/portfolio-88f76/configs  
+ 
+[debug] [2019-03-06T17:13:00.251Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (42.39 KB) for uploading
+[debug] [2019-03-06T17:13:01.051Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/portfolio-88f76/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-03-06T17:13:02.493Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:13:02.494Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-ff61d5f1-7908-455f-b0e9-e1e47415d62f/cf1a7b23-f586-4d56-8201-f38b2aab1470.zip?GoogleAccessId=service-855730171048@gcf-admin-robot.iam.gserviceaccount.com&Expires=1551894179&Signature=rPcStOPobfKcj5%2F3wSfZOmYOn8PbjCGAYvasqAOFj3wwXFTDrnlOWBxipOmIkVoC6o3sP1VDebrq5I08eT30Jh%2BrFeotjVw0m34o8q%2BaTaYY0b5t5sMg%2BUaNkbCOe3EjFOyKYtV2NbSdkSbKrFOhsXQTQjlL596RDZgiWbr4nHeZt%2BlMAIGOdIktXk6r6msHHdzOe0GpaHIkc0MW8%2BOzDJbm5kh%2FgcMvhb0vvzuqRM6PfMxDuHHY3VmIMcRsF%2FQE8dvrLRmx7zY1D9ZXGZg%2BpK5USXccambGYKChPgSvVvDOlQZsUyipX8OOrca0dZmfaK9pgJDnSqi%2BEN7XcZWQsA%3D%3D  
+
+[debug] [2019-03-06T17:13:04.540Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting[portfolio-88f76]: beginning deploy...
+[info] i  hosting[portfolio-88f76]: found 13235 files in ./
+[debug] [2019-03-06T17:13:08.870Z] [hosting] hash cache [] load error: lines is not defined
+[debug] [2019-03-06T17:13:10.074Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:10.761Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:11.463Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:12.094Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:12.807Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:13.767Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:14.447Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:15.064Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:15.858Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:16.366Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:18.395Z] [hosting] hash cache [] stored for 13235 files
+[debug] [2019-03-06T17:13:18.396Z] [hosting][hash queue][FINAL]
+[debug] [2019-03-06T17:13:23.206Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:13:23.269Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:27.689Z] [hosting][upload]
+[debug] [2019-03-06T17:13:31.904Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:13:31.906Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:33.396Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:13:33.400Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:34.419Z] [uploadQueue] Retrying task 523da4530f9d6635dd9f96827ca4c8a2dbaf5f90bd561b84735842fe44b2bbff
+[debug] [2019-03-06T17:13:34.441Z] [uploadQueue] Retrying task 9fcf576cca2b75562f265838b01b3eb9b7584f7e056cf72a876823e4f84b7e99
+[debug] [2019-03-06T17:13:34.699Z] [uploadQueue] Retrying task 8ed293281d2bbbf83988f2d1bd5dd9c7895e8a3240a7fc6e8e62ed5356796672
+[debug] [2019-03-06T17:13:34.700Z] [uploadQueue] Retrying task a5339df54ac8fd8db6884ef2ee3705cb985e15681194d452b7824a66fdfd370e
+[debug] [2019-03-06T17:13:34.703Z] [uploadQueue] Retrying task 90195d65a32df5398cf6a0835479a07581db89986f7a1073a70fa7211f586267
+[debug] [2019-03-06T17:13:34.745Z] [uploadQueue] Retrying task ffc5dad0ef503e709a9e7bc374f83f50f2ffd367ccf2091b813bcd8575cfc322
+[debug] [2019-03-06T17:13:35.617Z] [uploadQueue] Retrying task 16890fbabb5255811f1157b9fa09f2a3245672564be1868c7c34f928473a0eab
+[debug] [2019-03-06T17:13:35.618Z] [uploadQueue] Retrying task 46e3f67cd3eddbd3c7aadedbb77aa8673f4e55d8eab8a2a243d8121cb28a733a
+[debug] [2019-03-06T17:13:35.618Z] [uploadQueue] Retrying task 13be0681fd68cc28d1e4232a88b4a3f494a065a84188dd310063750f12fbff36
+[debug] [2019-03-06T17:13:35.688Z] [uploadQueue] Retrying task a15db2a87166df342de32584dc387c9a0f75b149772f102bcb6b64df9980ec50
+[debug] [2019-03-06T17:13:35.689Z] [uploadQueue] Retrying task 654b968dec7b2d307296930b2c7036fcb0cc614b637a9c1eeac157e4ce9487fd
+[debug] [2019-03-06T17:13:35.839Z] [uploadQueue] Retrying task e0070e8afd8935f0c3687306bea5abbd9f772c9e9bd50a02949c385fd2daf621
+[debug] [2019-03-06T17:13:35.845Z] [uploadQueue] Retrying task 38f5bc2252c9b89910f4dfbe73788d02dff53e68db93f7a52b94b02b9439ac66
+[debug] [2019-03-06T17:13:35.847Z] [uploadQueue] Retrying task abfb78416ef8f32f63d54bd8b33a5b5cf311ba6d8220ae15cc268f37913d1f09
+[debug] [2019-03-06T17:13:35.847Z] [uploadQueue] Retrying task b0f832ba21b912053f16f36fd6edd8a33310ba903c8ba777e06f5fb55da3ca2e
+[debug] [2019-03-06T17:13:35.848Z] [uploadQueue] Retrying task 4214a3612bcf68d176b81f25c8f0d30d3e05c26ba2f13c6d9c79f40a6175393d
+[debug] [2019-03-06T17:13:35.848Z] [uploadQueue] Retrying task cb8f0f807e1c39ba8a93a99bce2bf6df704291a31164c5bdb26c63ff7b1193cc
+[debug] [2019-03-06T17:13:35.848Z] [uploadQueue] Retrying task d738b22c27b9207ca6bd132adf0dbe02d5240dfb178cdace579982b9dff345ab
+[debug] [2019-03-06T17:13:35.851Z] [uploadQueue] Retrying task bd7ba7cb0e385c82b349c08edbd847ff9320a77d73714373dcb3d73bca90f744
+[debug] [2019-03-06T17:13:35.852Z] [uploadQueue] Retrying task 111f1c5e27fb49c48e4fcc790481b0edfd59b7732057dfd3c9b8b4dde6221788
+[debug] [2019-03-06T17:13:35.852Z] [uploadQueue] Retrying task 06964ef6ec629277e3759d80c5a141412fefc90e925b139ba04b565507d51978
+[debug] [2019-03-06T17:13:35.856Z] [uploadQueue] Retrying task 8b649ae264da8840fee7328b1152195078a9e1ef33e396b0577678d5791d93f6
+[debug] [2019-03-06T17:13:36.790Z] [uploadQueue] Retrying task 495af037ca545abe01f6e7bc5972030bfc38ce138087bc4111db8a6132704510
+[debug] [2019-03-06T17:13:36.792Z] [uploadQueue] Retrying task 207bc0b48c5d82266a1c67a9f1ff9afbd86e045da07d5776f73f83ffeee5a4be
+[debug] [2019-03-06T17:13:36.819Z] [uploadQueue] Retrying task 4e914b866b9944464299de85764d21556b8f97c8ca8ab77af89e3fddf91498cd
+[debug] [2019-03-06T17:13:37.934Z] [uploadQueue] Retrying task 8d2427cb19e790c3bd0eb10f3e65af517af50bc8881ca5a82b4054a9f6af8021
+[debug] [2019-03-06T17:13:37.939Z] [uploadQueue] Retrying task 34639111bbe4b5a5c43bada849de056674e7eafd4531540021f248966bcf1a4e
+[debug] [2019-03-06T17:13:37.945Z] [uploadQueue] Retrying task 26ba53930bf8212a78f4c795b094cd6407b87672994e2ee52164c170d5e2b0c3
+[debug] [2019-03-06T17:13:37.958Z] [uploadQueue] Retrying task 13b11d04dfad7fc59e2e6e7b94e996fbdbe404a450ea52e41882adcf6403337b
+[debug] [2019-03-06T17:13:37.973Z] [uploadQueue] Retrying task 8744e4a651fa155f19ae5923ad8f61330cf88bb15658952b7080aa479915f183
+[debug] [2019-03-06T17:13:37.979Z] [uploadQueue] Retrying task c83f667f4586b1383fc9d7f73eabb38e63fa09e7b6fbae8c8e72302534a9221e
+[debug] [2019-03-06T17:13:37.980Z] [uploadQueue] Retrying task 1d78ce0069e47000a926460e38caf26451cec059599917f39d3dcb1366b288fa
+[debug] [2019-03-06T17:13:37.986Z] [uploadQueue] Retrying task 8734051f1c34c84a8e660f1f3273084bfb71fe226fd353a9512c0a72edf8c5cd
+[debug] [2019-03-06T17:13:37.987Z] [uploadQueue] Retrying task 3acaed960792a79418f0d5d50063f419d077d4453651b5be5e254763f4def31f
+[debug] [2019-03-06T17:13:37.992Z] [uploadQueue] Retrying task b519160c26c083b097d5c4233b88489da2b5e0770e39208a1834c72c430f05a3
+[debug] [2019-03-06T17:13:38.994Z] [hosting][upload]
+[debug] [2019-03-06T17:13:39.085Z] [uploadQueue] Retrying task 3dda09ba7c01b7afbd2a302393a5c56fdb89278b445114a159a641ce2e5bb8a5
+[debug] [2019-03-06T17:13:40.773Z] [uploadQueue] Retrying task a6e0ab86b300627686be20e4931610d5a02a14a1ae0ed3cb95598571470304ae
+[debug] [2019-03-06T17:13:41.299Z] [uploadQueue] Retrying task e8e18a1a971ca7d6880cd4b8a6276b06028ce99630f418327e50eb3563f9135b
+[debug] [2019-03-06T17:13:42.895Z] [uploadQueue] Retrying task 827495ed338423f8ebe939adfd4c3ffc0a7f1398badc2ca62932cba03d347933
+[debug] [2019-03-06T17:13:43.406Z] [uploadQueue] Retrying task 8528a023ee27730dcc7d41f45d5c37ac6a41b5929544493bcc5a6d2a24d4f4e3
+[debug] [2019-03-06T17:13:45.750Z] [hosting][upload]
+[debug] [2019-03-06T17:13:46.333Z] [uploadQueue] Retrying task 7ef3898eef86dd934f9e8ca9ea22db15e4fc7b308c5a5de75c237d80071ec9eb
+[debug] [2019-03-06T17:13:46.612Z] [uploadQueue] Retrying task 93dd57f7c1c43de334b6e3df068058d6534edbd4541c48be8d9b29b63ee02025
+[debug] [2019-03-06T17:13:46.612Z] [uploadQueue] Retrying task f6aaaf1a4f8d88c5074c6e371feb677d58a9bf80c96318d95b783b852488f68e
+[debug] [2019-03-06T17:13:46.616Z] [uploadQueue] Retrying task 52ac2e4144f421e58ecd231bd33a05cab2c2a517fc4a2dcab6b70944fb0bb5dd
+[debug] [2019-03-06T17:13:46.621Z] [uploadQueue] Retrying task 865d2269fee411e11fedcda0b7da3ffce9089f28450aa9d8f7072a40f4ec3bbb
+[debug] [2019-03-06T17:13:46.622Z] [uploadQueue] Retrying task b4f1b2a2eeb406f8d23b2e4b86ff85f4882f133f1b2645e688a4137039096595
+[debug] [2019-03-06T17:13:46.622Z] [uploadQueue] Retrying task c8e9c667c13f00ecc41ef6791d79b8d61837317c31f04fde29833a76192ceec4
+[debug] [2019-03-06T17:13:46.641Z] [uploadQueue] Retrying task 9a079c4d42250d02a77be3d6793863f82aa4bb7c119fbd76175a69a2b15851c0
+[debug] [2019-03-06T17:13:47.014Z] [uploadQueue] Retrying task 16890fbabb5255811f1157b9fa09f2a3245672564be1868c7c34f928473a0eab
+[debug] [2019-03-06T17:13:47.149Z] [uploadQueue] Retrying task 7c3c16069ad14c1ec78ac94e122aac74f34529d8d8deca721795cc408a93f4c6
+[debug] [2019-03-06T17:13:49.799Z] [hosting][upload]
+[debug] [2019-03-06T17:13:49.940Z] [uploadQueue] Retrying task cccb2db41fa8492fdb9bcb298424e1bcd2a1f8c4ead6cab92c2a503543f4dfc5
+[debug] [2019-03-06T17:13:51.777Z] [uploadQueue] Retrying task 653fe63e2ea3cd026feb76c2ca7333a41a5be37f50f639feb22f4482f3805688
+[debug] [2019-03-06T17:13:53.147Z] [hosting][upload]
+[debug] [2019-03-06T17:13:56.408Z] [uploadQueue] Retrying task a2fa791d98fa62a271b515f5bdfbf65d6a7263076c2b56ae27af13ba84d573a9
+[debug] [2019-03-06T17:13:56.658Z] [uploadQueue] Retrying task 540baf9c0d36c2299929cc525be18abe0562b2ff97ad4472b24137af9b10d058
+[debug] [2019-03-06T17:13:57.281Z] [hosting][upload]
+[debug] [2019-03-06T17:13:57.522Z] [uploadQueue] Retrying task 5c998171026129c43df4ad316a849fb6975b06f0a7c9e8be36410347922697a7
+[debug] [2019-03-06T17:13:57.696Z] [uploadQueue] Retrying task b2d2016a282f1d55f870e7b47d0d0c8f751b900eb9b61b10cc38ea5ecc829f9b
+[debug] [2019-03-06T17:13:58.097Z] [uploadQueue] Retrying task 80ed0fb77aa155109d82a67676f4089e7a2c9826629f5db7caaceee7ab8773da
+[debug] [2019-03-06T17:13:58.324Z] [uploadQueue] Retrying task d9cc65dbe11772f72a48e40f9e97bf20625c1ba88734be938ee9e884f56db754
+[debug] [2019-03-06T17:13:59.270Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-06T17:13:59.272Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:13:59.387Z] [uploadQueue] Retrying task 4d1ae3bd0adadb2ddd8bdae5b2b3b020813eb15a8196e24ea3e533841121e472
+[debug] [2019-03-06T17:13:59.731Z] [uploadQueue] Retrying task 20b4384ae4aa6acafa432bd6aabbfc6bad02d74b8f916c42f1c6d8841627befd
+[debug] [2019-03-06T17:14:00.792Z] [uploadQueue] Retrying task a213717d1e84c98cbff3cff6a958b4b1cc96ed944add9f95df0d6750f37a2dc6
+[debug] [2019-03-06T17:14:00.793Z] [uploadQueue] Retrying task 1db3955ed306c9a30c960a651d1648e3e0474d012e48ef1bf25bde897783e7d5
+[debug] [2019-03-06T17:14:00.823Z] [uploadQueue] Retrying task 6c46bb250a3a26d5206417d57392d477f65c6420a0c8b21fe6d8e22129a6d8f4
+[debug] [2019-03-06T17:14:01.230Z] [uploadQueue] Retrying task 652d51910a323ed53b33ecdd6640b2fdbefc7ee4811cb8e838549704becb482e
+[debug] [2019-03-06T17:14:01.399Z] [uploadQueue] Retrying task 7d55409a864fb70b30995ceae849bf16559c58dc7082134ae23397e465fce533
+[debug] [2019-03-06T17:14:01.798Z] [hosting][upload]
+[debug] [2019-03-06T17:14:01.954Z] [uploadQueue] Retrying task 7394db722b85dbb52f2f7d84ed97a2860b0f629dc4c287a8c1cf2700fcd61019
+[debug] [2019-03-06T17:14:02.101Z] [uploadQueue] Retrying task 26baf6cf1493b9ebd20ca869676f87eda9bf21a302528efdb20d9e7e8b0462ae
+[debug] [2019-03-06T17:14:02.755Z] [uploadQueue] Retrying task 1da4d0b1e6f149d74516da8963fbf68505259cdbaf61e45a1ffb515644ebd02d
+[debug] [2019-03-06T17:14:03.222Z] [uploadQueue] Retrying task 93d39a792b67861924127910a716be9b09baf199a597154ec4b382fc45faf64f
+[debug] [2019-03-06T17:14:03.229Z] [uploadQueue] Retrying task 74ccead6adbd16edb26b624ac33ba741d676ed5b30e6f6f15321ffb3de4b09a5
+[debug] [2019-03-06T17:14:03.553Z] [uploadQueue] Retrying task 7f43b6c4c5269e8a613889692c27229d73361abccaa1e28d3e2e521e6eab82d9
+[debug] [2019-03-06T17:14:03.754Z] [uploadQueue] Retrying task 740f65337535d469e095807ae5343da0951987b480e6064370e3afeef3a613c1
+[debug] [2019-03-06T17:14:05.197Z] [uploadQueue] Retrying task 070e427a1ba2cc4ec8d887159cb00cfd4c0c9c4035a1e280f7af023ae0a1cbe7
+[debug] [2019-03-06T17:14:05.198Z] [uploadQueue] Retrying task 18cd5641e1d96a4fba31155070fc5b1af470e5523254dd571e25477309b463bb
+[debug] [2019-03-06T17:14:07.349Z] [uploadQueue] Retrying task effeab9ccf168875a5b9f0d11079c002aae4c79be51aab1e4d3dced49060c1f4
+[debug] [2019-03-06T17:14:07.717Z] [uploadQueue] Retrying task 0323bdf0c77c1eea4c3f55fc54359013663c597b10d8c131dbda25c1e1520632
+[debug] [2019-03-06T17:14:07.797Z] [uploadQueue] Retrying task 56679545f6bee3f3d6b3a4d4ab45fb933c1b862100f48c8d04d2482c0d4f8ddc
+[debug] [2019-03-06T17:14:07.898Z] [uploadQueue] Retrying task e49c282f388db5bf0007ff0d378c3d7fa09c46a1abcb94c7e4e2feaf060dbd17
+[debug] [2019-03-06T17:14:07.899Z] [uploadQueue] Retrying task b1edad92c9f8ae6f20e9a4c7dc905c6341c0ef12f22b89f22e151d5af5d17dcf
+[debug] [2019-03-06T17:14:07.921Z] [uploadQueue] Retrying task 5ded5a130d9a132471c23742cfdfc50dadc6b922ea21c2f9b2303a12bed48020
+[debug] [2019-03-06T17:14:07.943Z] [uploadQueue] Retrying task 540baf9c0d36c2299929cc525be18abe0562b2ff97ad4472b24137af9b10d058
+[debug] [2019-03-06T17:14:08.107Z] [uploadQueue] Retrying task 47c36e3102182960b3399566688b4f6593b911f16bb4b1399835f6363d790d0d
+[debug] [2019-03-06T17:14:08.130Z] [uploadQueue] Retrying task c600e2163d08622cd50a10dccfd06db670acd667d76a4ad0836cb59ac7e77ce4
+[debug] [2019-03-06T17:14:08.159Z] [uploadQueue] Retrying task 7d55ef88f893a326df8c5d1dbf8be849cb8883e341e1bc4240fd9e834e41f343
+[debug] [2019-03-06T17:14:08.348Z] [uploadQueue] Retrying task 92ac7576eabc24ce7a1f14f468f97913b136cfbb9b84e5518cdaefd807813e80
+[debug] [2019-03-06T17:14:08.558Z] [uploadQueue] Retrying task 1a5bbfaa120ad4e57ebd33f3391989f58065a59d1c2a300cb7c017b1a5b118f5
+[debug] [2019-03-06T17:14:08.815Z] [uploadQueue] Retrying task 5c998171026129c43df4ad316a849fb6975b06f0a7c9e8be36410347922697a7
+[debug] [2019-03-06T17:14:08.969Z] [uploadQueue] Retrying task 1e22f7dddb58e5244119945d9bec001ea4ecd0edec33a74d93c4883913a3d77d
+[debug] [2019-03-06T17:14:08.978Z] [uploadQueue] Retrying task b2d2016a282f1d55f870e7b47d0d0c8f751b900eb9b61b10cc38ea5ecc829f9b
+[debug] [2019-03-06T17:14:09.129Z] [uploadQueue] Retrying task 886aa8c3aba8d2acfb70f807e4f5234834e75699182d13041e5e863266a1cb71
+[debug] [2019-03-06T17:14:09.191Z] [uploadQueue] Retrying task 22c1b490645e8ca4af261e59cfff18f2e44414b1740aadde60fa57a855398f02
+[debug] [2019-03-06T17:14:09.542Z] [uploadQueue] Retrying task 99c21cb21958873648ffc38af90449f10bb63863cb982dca9ba86a401babc99d
+[debug] [2019-03-06T17:14:09.698Z] [uploadQueue] Retrying task fa3ee318f356ed6a056d9555eb86f82cc3de5003ec3fe1885e6cc7c503b394a5
+[debug] [2019-03-06T17:14:09.815Z] [uploadQueue] Retrying task 05c84b277993bd6ab860d02fc83bbcb768c5e984995a47dbd86d74258c6124e2
+[debug] [2019-03-06T17:14:09.826Z] [uploadQueue] Retrying task 9ee6c213340f7714ee1932b29f2379377a746cdfb8e2ccb31495c54ba1296bb9
+[debug] [2019-03-06T17:14:09.833Z] [uploadQueue] Retrying task 270c5e5171a5b422c9d489ed31e9bd9bc09b5e4b87c941723acb30b490ec6808
+[debug] [2019-03-06T17:14:10.114Z] [uploadQueue] Retrying task b758a93bdb6d6740f148885ca1dcc71c8356fd0e234788201aa59624571bf0a2
+[debug] [2019-03-06T17:14:10.343Z] [uploadQueue] Retrying task b88c6cdb448d765fa17cafa9b49a31c2e6132702714b87dde7b59fb34ed17e5a
+[debug] [2019-03-06T17:14:10.582Z] [uploadQueue] Retrying task 813b6f82c02fe78caa03d4ad7c741f012820a653e5f553105570fcf058c1d6ef
+[debug] [2019-03-06T17:14:10.853Z] [uploadQueue] Retrying task a106093581961c6a26d7ee0c08ceeaff1362372b5400d7138850c1961ee5fd78
+[debug] [2019-03-06T17:14:10.854Z] [uploadQueue] Retrying task f27cfde8458d15288dd0147b5ef50c763c54a16f339c0a734f4b5b58b322601e
+[debug] [2019-03-06T17:14:10.865Z] [uploadQueue] Retrying task 49e2d68ea7c88b946f25aeab6612e27d78ccf5b7889b2ee1c31d2b917c0fec03
+[debug] [2019-03-06T17:14:10.949Z] [uploadQueue] Retrying task f2507edc3504834275b0953b3a8ea49c576da0af8e887ce2adfeee71acba9a34
+[debug] [2019-03-06T17:14:11.014Z] [uploadQueue] Retrying task e525b865ab24fa526406c32fbb9bf952fa2db780c86f5fb40676d7afe281294d
+[debug] [2019-03-06T17:14:11.041Z] [uploadQueue] Retrying task f7ade1d21a354f2f129059c0a4730aff0a06e8ae603fe8f87908b61976b915d7
+[debug] [2019-03-06T17:14:11.041Z] [uploadQueue] Retrying task fb042465a967c961b8e47526efbcf3c3e27cd9750b889da63f0a38c1a50a3d46
+[debug] [2019-03-06T17:14:11.166Z] [uploadQueue] Retrying task 0b6dae845ada3107c047a832a6d8ab74a7e633cdd80b6337106d97eeb335fb90
+[debug] [2019-03-06T17:14:11.253Z] [uploadQueue] Retrying task bdd4d392440e9e38a29aeb5f1816761ad836ffdc2baeb81a3cfdfacfbb7a5268
+[debug] [2019-03-06T17:14:11.630Z] [populateQueue] Retrying task index 1
+[debug] [2019-03-06T17:14:11.631Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:14:11.649Z] [uploadQueue] Retrying task 2b8cb5b0c1871c185ee748a67d28382dd0e0481c2dbd190e7e9f08afc5492ede
+[debug] [2019-03-06T17:14:11.649Z] [uploadQueue] Retrying task e35332bbda84031736c1ff6c3edc4f145d6cde549862312d4b36439b183143e8
+[debug] [2019-03-06T17:14:12.310Z] [uploadQueue] Retrying task e277e8612911cd8e4572ea87b0bf589fc3cd9e8126b5a62aadb734f23eb2345b
+[debug] [2019-03-06T17:14:13.381Z] [uploadQueue] Retrying task c85db2230652aafc37248efc89582af4cc8c03f6b2569d2d209f3c0e402faeea
+[debug] [2019-03-06T17:14:13.609Z] [uploadQueue] Retrying task bb43ddb5a12b17eeffe171c30e3836196b01a783be98e193cf5fffc01510b8db
+[debug] [2019-03-06T17:14:13.690Z] [uploadQueue] Retrying task ad490623637483e26b6b76d2ce84f581c6c271a789f2b47c23c7ced803b5c225
+[debug] [2019-03-06T17:14:13.810Z] [uploadQueue] Retrying task 4ce6bdf92eccd4d0cdf44d293e2d6fee7e61d03a11e80ae3df9612be9ef865f8
+[debug] [2019-03-06T17:14:14.441Z] [uploadQueue] Retrying task d3b0dd0af6f91b1d42217d12b15cbc80bd1208f019ad86eda3b62da371131c2a
+[debug] [2019-03-06T17:14:14.463Z] [uploadQueue] Retrying task 7f2b83bd51a15f2303cca20a03cedaf705dc8d3ed10b9f5ee492f9390f65c775
+[debug] [2019-03-06T17:14:14.802Z] [uploadQueue] Retrying task 4675d48f02e462110713f757f2d37c21178817e8d403a2363e29e9a2b97dc1ef
+[debug] [2019-03-06T17:14:15.035Z] [uploadQueue] Retrying task 740f65337535d469e095807ae5343da0951987b480e6064370e3afeef3a613c1
+[debug] [2019-03-06T17:14:15.073Z] [uploadQueue] Retrying task fa6c9ddc0bc1c0099f3ed6cf45028d1c41ddfed67e678d9faf5aa30f89b5e85e
+[debug] [2019-03-06T17:14:15.717Z] [hosting][upload]
+[debug] [2019-03-06T17:14:16.520Z] [uploadQueue] Retrying task 6d04d785675874da47812bc138cd33a11561c59ae29b9afc5098388fa9beb354
+[debug] [2019-03-06T17:14:16.553Z] [uploadQueue] Retrying task 18cd5641e1d96a4fba31155070fc5b1af470e5523254dd571e25477309b463bb
+[debug] [2019-03-06T17:14:16.925Z] [populateQueue] Retrying task index 8
+[debug] [2019-03-06T17:14:16.926Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:14:18.007Z] [uploadQueue] Retrying task 3ca6f5dfd331cae76cdaa6e096a7c14dc2be6be151a179122112fce1fcce0444
+[debug] [2019-03-06T17:14:18.274Z] [populateQueue] Retrying task index 5
+[debug] [2019-03-06T17:14:18.274Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:14:18.839Z] [uploadQueue] Retrying task 9f3365b0cda20a6c717f0fd921d4ba90110022e6ebb5f3a1c5de0bce1b558373
+[debug] [2019-03-06T17:14:19.281Z] [uploadQueue] Retrying task b4f1b2a2eeb406f8d23b2e4b86ff85f4882f133f1b2645e688a4137039096595
+[debug] [2019-03-06T17:14:19.832Z] [populateQueue] Retrying task index 9
+[debug] [2019-03-06T17:14:19.833Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:14:19.931Z] [uploadQueue] Retrying task 090a364ebe884d34581d412badf49b42f6a9c662d29adc70d94c5a7aba2d3ca7
+[debug] [2019-03-06T17:14:20.027Z] [uploadQueue] Retrying task 540baf9c0d36c2299929cc525be18abe0562b2ff97ad4472b24137af9b10d058
+[debug] [2019-03-06T17:14:20.613Z] [populateQueue] Retrying task index 6
+[debug] [2019-03-06T17:14:20.614Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:14:20.938Z] [uploadQueue] Retrying task fa3ee318f356ed6a056d9555eb86f82cc3de5003ec3fe1885e6cc7c503b394a5
+[debug] [2019-03-06T17:14:21.126Z] [populateQueue] Retrying task index 4
+[debug] [2019-03-06T17:14:21.126Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:14:21.169Z] [uploadQueue] Retrying task cab19c073b3ac04ad921166d67d634a1d3d3f811b5547f41cebda1a62b2cb720
+[debug] [2019-03-06T17:14:21.558Z] [uploadQueue] Retrying task fd4d88b2c625fab1599763e7a026e2909585b833254d404f937dce66649cbf89
+[debug] [2019-03-06T17:14:21.845Z] [uploadQueue] Retrying task e934b363d5a12f3529f00cd4c29769571516faf8a1a82f3548095f43a1c166e6
+[debug] [2019-03-06T17:14:22.244Z] [uploadQueue] Retrying task e525b865ab24fa526406c32fbb9bf952fa2db780c86f5fb40676d7afe281294d
+[debug] [2019-03-06T17:14:25.165Z] [populateQueue] Retrying task index 10
+[debug] [2019-03-06T17:14:25.167Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/portfolio-88f76/versions/6330cfcdbf90911b:populateFiles  
+ <request body omitted>
+[debug] [2019-03-06T17:14:25.860Z] [hosting][upload]
