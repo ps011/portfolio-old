@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Prasheel's profile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ps011/Portfolio.git"
+  },
+  "keywords": [
+    "prasheel",
+    "ps11",
+    "portfolio",
+    "js",
+    "javascript",
+    "full-stack",
+    "node.js",
+    "profile"
+  ],
+  "author": "Prasheel Soni <prasheelsoni11@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ps011/Portfolio/issues"
+  },
+  "homepage": "https://github.com/ps011/Portfolio#readme"
+}
