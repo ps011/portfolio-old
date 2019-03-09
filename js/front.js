@@ -445,11 +445,14 @@ function waypointsRefresh() {
 function contactForm() {
     $("#contact-form").submit(function () {
 
-	var url = "contact.php"; // the script where you handle the form input.
+	var url = "https://us-central1-portfolio-88f76.cloudfunctions.net/contact"; // the script where you handle the form input.
 
 	$.ajax({
 	    type: "POST",
 	    url: url,
+    	beforeSend: function(xhr) {
+      xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
+    },
 	    data: $(this).serialize(), // serializes the form's elements.
 	    success: function (data)
 	    {
