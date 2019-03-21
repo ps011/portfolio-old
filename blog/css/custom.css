@@ -59,7 +59,7 @@ UNIVERSAL SECTION STYLES
     position: relative;
     padding-top: 60px;
     padding-bottom: 60px;
-    text-align: center;
+    /*text-align: center;*/
 }
 .section:before,
 .section:after {

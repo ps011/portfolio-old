@@ -1,0 +1,36 @@
+{
+  "tags": [
+    {
+      "label": "post-details",
+      "description": "",
+      "attributes": [
+        {
+          "label": "content-data",
+          "description": "The content data",
+          "required": false
+        },
+        {
+          "label": "content-url",
+          "description": "The content url",
+          "required": false
+        }
+      ]
+    },
+    {
+      "label": "post-list",
+      "description": "",
+      "attributes": [
+        {
+          "label": "content-data",
+          "description": "The content data",
+          "required": false
+        },
+        {
+          "label": "content-url",
+          "description": "The content url",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

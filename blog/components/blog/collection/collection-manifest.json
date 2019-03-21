@@ -1,0 +1,100 @@
+{
+  "components": [
+    {
+      "tag": "post-details",
+      "dependencies": [
+        "stencil-route",
+        "stencil-router"
+      ],
+      "componentClass": "PostDetails",
+      "componentPath": "components/post-details/post-details.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/post-details/post-details.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "contentData",
+          "type": "Any",
+          "mutable": true,
+          "attr": "content-data"
+        },
+        {
+          "name": "contentUrl",
+          "type": "String",
+          "attr": "content-url"
+        },
+        {
+          "name": "history",
+          "attr": "history"
+        },
+        {
+          "name": "match",
+          "attr": "match"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "post-list",
+      "dependencies": [],
+      "componentClass": "PostList",
+      "componentPath": "components/post-list/post-list.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/post-list/post-list.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "contentData",
+          "type": "Any",
+          "mutable": true,
+          "attr": "content-data"
+        },
+        {
+          "name": "contentUrl",
+          "type": "String",
+          "attr": "content-url"
+        },
+        {
+          "name": "history",
+          "attr": "history"
+        }
+      ],
+      "shadow": true
+    }
+  ],
+  "collections": [
+    {
+      "name": "@stencil/router",
+      "tags": [
+        "stencil-async-content",
+        "stencil-route",
+        "stencil-route-link",
+        "stencil-route-switch",
+        "stencil-route-title",
+        "stencil-router",
+        "stencil-router-prompt",
+        "stencil-router-redirect"
+      ]
+    },
+    {
+      "name": "@stencil/state-tunnel",
+      "tags": [
+        "context-consumer"
+      ]
+    }
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.16.2",
+    "typescriptVersion": "3.2.2"
+  },
+  "bundles": []
+}
