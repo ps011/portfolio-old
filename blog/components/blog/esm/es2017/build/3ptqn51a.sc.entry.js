@@ -1,4 +1,6 @@
-export class PostList {
+import { h } from '../techdom.core.js';
+
+class PostList {
     async componentWillLoad() {
         this.contentData = await this.getContentData();
     }
@@ -17,9 +19,6 @@ export class PostList {
         });
     }
     render() {
-        let formatDate = (timestamp) => {
-            return timestamp;
-        };
         return ([h("link", { href: "assets/vendor/bootstrap/css/bootstrap.min.css", rel: "stylesheet" }),
             h("link", { href: "assets/vendor/fontawesome-free/css/all.min.css", rel: "stylesheet", type: "text/css" }),
             h("link", { href: 'https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', rel: 'stylesheet', type: 'text/css' }),
@@ -35,9 +34,7 @@ export class PostList {
                                         h("h3", { class: "post-subtitle" }, content.fields.postSubtitle.stringValue)),
                                     h("p", { class: "post-meta" },
                                         "Posted by",
-                                        h("a", { href: content.fields.userProfile.stringValue }, ` ${content.fields.postedBy.stringValue} `),
-                                        "on ",
-                                        formatDate(content.fields.dateCreated.timestampValue))),
+                                        h("a", { href: content.fields.userProfile.stringValue }, ` ${content.fields.postedBy.stringValue} `))),
                                 h("hr", null)];
                         }),
                         h("div", { class: "clearfix" },
@@ -60,5 +57,7 @@ export class PostList {
             "attr": "history"
         }
     }; }
-    static get style() { return "/**style-placeholder:post-list:**/"; }
+    static get style() { return ""; }
 }
+
+export { PostList };

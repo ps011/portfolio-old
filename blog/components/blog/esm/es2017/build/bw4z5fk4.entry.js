@@ -19,6 +19,9 @@ class PostList {
         });
     }
     render() {
+        let formatDate = (timestamp) => {
+            return timestamp;
+        };
         return ([h("link", { href: "assets/vendor/bootstrap/css/bootstrap.min.css", rel: "stylesheet" }),
             h("link", { href: "assets/vendor/fontawesome-free/css/all.min.css", rel: "stylesheet", type: "text/css" }),
             h("link", { href: 'https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', rel: 'stylesheet', type: 'text/css' }),
@@ -29,12 +32,14 @@ class PostList {
                     h("div", { class: "col-lg-8 col-md-10 mx-auto" },
                         this.contentData && this.contentData.map(content => {
                             return [h("div", { class: "post-preview" },
-                                    h("a", { href: `post-detail.html?id=${content.fields.postId.stringValue}` },
+                                    h("a", { href: `${content.fields.postUrl.stringValue}?id=${content.fields.postId.stringValue}` },
                                         h("h2", { class: "post-title" }, content.fields.postTitle.stringValue),
                                         h("h3", { class: "post-subtitle" }, content.fields.postSubtitle.stringValue)),
                                     h("p", { class: "post-meta" },
                                         "Posted by",
-                                        h("a", { href: content.fields.userProfile.stringValue }, ` ${content.fields.postedBy.stringValue} `))),
+                                        h("a", { href: content.fields.userProfile.stringValue }, ` ${content.fields.postedBy.stringValue} `),
+                                        "on ",
+                                        formatDate(content.fields.dateCreated.timestampValue))),
                                 h("hr", null)];
                         }),
                         h("div", { class: "clearfix" },
